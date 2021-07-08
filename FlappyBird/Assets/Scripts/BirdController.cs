@@ -11,4 +11,13 @@ public class BirdController : MonoBehaviour
     {
         movement2D = GetComponent<Movement2D>();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(keyCodeJump))
+        {
+            movement2D.Jump();
+        }
+
+    }
 }
