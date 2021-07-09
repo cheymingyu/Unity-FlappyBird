@@ -6,17 +6,27 @@ public class BirdController : MonoBehaviour
     private KeyCode keyCodeJump = KeyCode.Space;
 
     private Movement2D movement2D;
+    [SerializeField]
+    private float jumpForce = 6.0f;
+    private Rigidbody2D rigid2D;
 
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
+        rigid2D = GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(keyCodeJump))
         {
-            movement2D.Jump();
+            rigid2D.velocity = Vector3.up * jumpForce;
+            transform.rotation = Quaternion.Euler(0, 0, 15);
+        }
+        if (rigid2D.velocity.y < -1 && rigid2D.velocity.y > -3)
+        {
+            transform.Rotate(0, 0, -2.0f);
         }
 
     }
