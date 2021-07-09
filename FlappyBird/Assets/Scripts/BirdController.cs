@@ -24,9 +24,9 @@ public class BirdController : MonoBehaviour
             rigid2D.velocity = Vector3.up * jumpForce;
             transform.rotation = Quaternion.Euler(0, 0, 15);
         }
-        if (rigid2D.velocity.y < -1 && rigid2D.velocity.y > -3)
+        if (rigid2D.velocity.y < -2 && rigid2D.velocity.y > -4)
         {
-            transform.Rotate(0, 0, -2.0f);
+            transform.Rotate(0, 0, -2.5f);
         }
 
     }
