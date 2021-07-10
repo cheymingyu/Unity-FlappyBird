@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ScoreBoardSpawner : MonoBehaviour
@@ -15,4 +16,21 @@ public class ScoreBoardSpawner : MonoBehaviour
         restartButton.SetActive(false);
 
     }
+    public void GameOver()
+    {
+        scoreBoard.SetActive(true);
+
+        restartButton.SetActive(true);
+        //StartCoroutine("ShowScoreBoard");
+    }
+
+    //private IEnumerator ShowScoreBoard()
+    //{
+    //    scoreBoard.SetActive(true);
+
+    //    //yield return new WaitForSeconds(1.0f);
+
+    //    restartButton.SetActive(true);
+    //}
+    
 }
