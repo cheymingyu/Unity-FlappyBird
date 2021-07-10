@@ -36,7 +36,7 @@ public class PipeSpawner : MonoBehaviour
             Vector3 upPosition = new Vector3(4.7f, positionY + 10.0f, 0.0f);
             // 위 파이프 생성
             GameObject pipeUpClone = Instantiate(pipeUp, upPosition, Quaternion.identity);
-
+            
             // spawnTime만큼 대기
             yield return new WaitForSeconds(spawnTime);
         }
