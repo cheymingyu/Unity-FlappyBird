@@ -11,6 +11,12 @@ public class PositionScroller : MonoBehaviour
     [SerializeField]
     private Vector3 moveDirection = Vector3.left;
 
+    public float MoveSpeed
+    {
+        set => moveSpeed = value;
+        get => moveSpeed;
+    }
+
     private void Update()
     {
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
