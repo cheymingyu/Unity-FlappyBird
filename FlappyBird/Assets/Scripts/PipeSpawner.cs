@@ -7,10 +7,15 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField]
     private GameObject pipeDown;             // 복제해서 생성할 파이프 프리팹
     [SerializeField]
-    private GameObject pipeUp;             // 복제해서 생성할 파이프 프리팹
+    private GameObject pipeUp;              // 복제해서 생성할 파이프 프리팹
     [SerializeField]
-    private float spawnTime;                    // 생성 주기
+    private float spawnTime;                // 생성 주기
 
+    public float SpawnTime
+    {
+        set => spawnTime = value;
+        get => spawnTime;
+    }
 
     private void Awake()
     {
