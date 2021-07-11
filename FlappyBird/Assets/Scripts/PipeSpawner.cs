@@ -9,6 +9,8 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField]
     private GameObject pipeUp;              // 복제해서 생성할 파이프 프리팹
     [SerializeField]
+    private GameObject scoreLine;           // 점수 증가시킬 프리팹
+    [SerializeField]
     private float spawnTime;                // 생성 주기
 
     public float SpawnTime
@@ -36,7 +38,11 @@ public class PipeSpawner : MonoBehaviour
             Vector3 upPosition = new Vector3(4.7f, positionY + 10.0f, 0.0f);
             // 위 파이프 생성
             GameObject pipeUpClone = Instantiate(pipeUp, upPosition, Quaternion.identity);
-            
+            // 점수 라인 생성 위치
+            Vector3 linePosition = new Vector3(5.0f, (2*positionY + 10.0f)/2, 0.0f);
+            // 점수 라인 생성
+            GameObject scoreLineClone = Instantiate(scoreLine, linePosition, Quaternion.identity);
+
             // spawnTime만큼 대기
             yield return new WaitForSeconds(spawnTime);
         }
