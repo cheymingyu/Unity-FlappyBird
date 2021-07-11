@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pipe
   - Ground
+  - Bird
   layers:
   - Default
   - TransparentFX
