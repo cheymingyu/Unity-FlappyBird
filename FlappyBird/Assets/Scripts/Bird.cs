@@ -12,6 +12,14 @@ public class Bird : MonoBehaviour
     private PipeSpawner pipeSpawner;
     private Animator animator;
 
+    private int score;
+    public int Score
+    {
+        // score 값이 음수가 되지 않도록
+        set => score = Mathf.Max(0, value);
+        get => score;
+    }
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
