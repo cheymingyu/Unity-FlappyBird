@@ -7,6 +7,8 @@ public class ScoreBoardSpawner : MonoBehaviour
     private GameObject scoreBoard;
     [SerializeField]
     private GameObject restartButton;
+    [SerializeField]
+    private GameObject finalScore;
 
     private void Awake()
     {
@@ -14,6 +16,8 @@ public class ScoreBoardSpawner : MonoBehaviour
         scoreBoard.SetActive(false);
         // 재시작 버튼 비활성화
         restartButton.SetActive(false);
+        // 최종 점수 비활성화
+        finalScore.SetActive(false);
 
     }
     public void GameOver()
@@ -21,6 +25,9 @@ public class ScoreBoardSpawner : MonoBehaviour
         scoreBoard.SetActive(true);
 
         restartButton.SetActive(true);
+
+        finalScore.SetActive(true);
+
         //StartCoroutine("ShowScoreBoard");
     }
 
@@ -32,5 +39,5 @@ public class ScoreBoardSpawner : MonoBehaviour
 
     //    restartButton.SetActive(true);
     //}
-    
+
 }
