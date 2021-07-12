@@ -10,6 +10,8 @@ public class Bird : MonoBehaviour
     private PositionScroller PositionScroller;
     [SerializeField]
     private PipeSpawner pipeSpawner;
+    [SerializeField]
+    private AudioSource audioSource;
     private Animator animator;
 
     private int score;
@@ -22,6 +24,7 @@ public class Bird : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1.0f;
         animator = GetComponent<Animator>();
     }
 
@@ -31,7 +34,7 @@ public class Bird : MonoBehaviour
         if (collision.gameObject.tag == "Pipe" || collision.gameObject.tag == "Ground")
         {
             StartCoroutine("GameOver");
-
+            audioSource.Play();
         }
     }
 
